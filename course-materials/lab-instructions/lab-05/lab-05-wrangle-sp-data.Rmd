@@ -41,6 +41,7 @@ You can load them by running the following in your Console:
 
 ```{r message = FALSE}
 library(tidyverse) 
+devtools::install_github("rstudio-education/dsbox")
 library(dsbox) 
 ```
 
@@ -132,13 +133,13 @@ dn_lq_ak
 4.  How many observations are in the joined `dn_lq_ak` data frame? What are the names of the variables in this data frame.
 
 `.x` in the variable names means the variable comes from the `x` data frame (the first argument in the `full_join` call, i.e. `dn_ak`), and `.y` means the variable comes from the `y` data frame.
-These varibles are renamed to include `.x` and `.y` because the two data frames have the same variables and it's not possible to have two variables in a data frame with the exact same name.
+These variables are renamed to include `.x` and `.y` because the two data frames have the same variables and it's not possible to have two variables in a data frame with the exact same name.
 
 Now that we have the data in the format we wanted, all that is left is to calculate the distances between the pairs.
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-5.  What function from the tidyverse do we use the add a new variable to a data frame while keeping the existing variables?
+5.  What function from the tidyverse do we to use to add a new variable to a data frame while keeping the existing variables?
 
 One way of calculating the distance between any two points on the earth is to use the Haversine distance formula.
 This formula takes into account the fact that the earth is not flat, but instead spherical.
@@ -169,10 +170,10 @@ This function takes five arguments:
 -   A parameter by which to round the responses
 
 6.  Calculate the distances between all pairs of Denny's and La Quinta locations and save this variable as `distance`.
-    Make sure to save this variable in THE `dn_lq_ak` data frame so that you can use it later.
+    Make sure to save this variable in the `dn_lq_ak` data frame so that you can use it later.
 
 7.  Calculate the minimum distance between a Denny's and La Quinta for each Denny's location.
-    To do so we group by Denny's locations and calculate a new variable that stores the information for the minimum distance.
+    To do so, we group by Denny's locations and calculate a new variable that stores the information for the minimum distance.
 
 ```{r eval = FALSE}
 dn_lq_ak_mindist <- dn_lq_ak %>%
@@ -180,11 +181,11 @@ dn_lq_ak_mindist <- dn_lq_ak %>%
   summarise(closest = min(distance))
 ```
 
-8.  Describe the distribution of the distances Denny's and the nearest La Quinta locations in Alaska. Also include an appripriate visualization and relevant summary statistics.
+8.  Describe the distribution of the distances Denny's and the nearest La Quinta locations in Alaska. Also include an appropriate visualization and relevant summary statistics.
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-9.  Repeat the same analysis for North Carolina: (i) filter Denny's and La Quinta Data Frames for NC, (ii) join these data frames to get a completelist of all possible pairings, (iii) calculate the distances between all possible pairings of Denny's and La Quinta in NC, (iv) find the minimum distance between each Denny's and La Quinta location, (v) visualize and describe the distribution of these shortest distances using appropriate summary statistics.
+9.  Repeat the same analysis for North Carolina: (i) filter Denny's and La Quinta Data Frames for NC, (ii) join these data frames to get a complete list of all possible pairings, (iii) calculate the distances between all possible pairings of Denny's and La Quinta in NC, (iv) find the minimum distance between each Denny's and La Quinta location, (v) visualize and describe the distribution of these shortest distances using appropriate summary statistics.
 
 10. Repeat the same analysis for Texas.
 
