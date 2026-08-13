@@ -59,6 +59,7 @@ You can load them by running the following in your Console:
 
 ```{r message = FALSE}
 library(tidyverse) 
+devtools::install_github("tidyverse/dsbox")
 library(dsbox) 
 ```
 
@@ -198,7 +199,7 @@ dn_lq <- bind_rows(dennys, laquinta)
 ```
 
 We can plot the locations of the two establishments using a scatter plot, and color the points by the establishment type.
-Note that the latitude is plotted on the x-axis and the longitude on the y-axis.
+Note that the longitude is plotted on the x-axis and the latitude on the y-axis.
 
 ```{r}
 ggplot(dn_lq, mapping = aes(x = longitude, y = latitude, color = establishment)) +
