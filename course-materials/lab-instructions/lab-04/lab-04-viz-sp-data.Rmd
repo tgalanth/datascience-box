@@ -59,7 +59,7 @@ You can load them by running the following in your Console:
 
 ```{r message = FALSE}
 library(tidyverse) 
-devtools::install_github("tidyverse/dsbox")
+pak::pak("tidyverse/dsbox")
 library(dsbox) 
 ```
 
